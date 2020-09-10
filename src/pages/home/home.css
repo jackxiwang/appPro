@@ -1,0 +1,128 @@
+/* .h-head {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    padding:0.25rem 0 ;
+    padding-left: 0.3rem;
+    width: 1.8rem;
+    height: 1rem;
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+.search {
+   margin: 0 auto;
+    width: 1.7rem;
+    height: 0.44rem;
+    
+}
+.search input {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius:0.22rem;
+}
+.home .banner{
+    width: 100%;
+    height: 3.5rem;
+    background-color: orangered;
+}
+.seckill {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.seckill div{
+    text-align: center;
+    width: 24%;
+    height: 100%;
+}
+.seckill img {
+    width: 100%;
+}
+.home .list {
+    width: 100%;
+    height: auto;
+}
+.home .list  li {
+    width: 100%;
+    height: 1.8rem;
+}
+.li-img {
+    padding: 0.1rem;
+    width: 1.8rem;
+    height: 100%;
+}
+.li-img img {
+    border-radius: 0.16rem;
+    width: 100%;
+    height: 100%;
+}
+.home .list li {
+    margin-bottom: 0.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.li-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+}
+.li-desc p:nth-child(1) {
+    font-size: 0.36rem;
+}
+.li-desc p:nth-child(2) {
+    font-size: 0.18rem;
+    color: #e2388f;
+}
+.li-btn {
+    width: 1.72rem;
+    height: 0.68rem;
+    
+}
+.li-btn button{
+    width: 100%;
+    height: 100%;
+    line-height:0.68rem ;
+    text-align: center;
+    background-color: #ff9900;
+    color: #fff;
+    border-radius: 0.16rem;
+} */
+/* /////////////////////////// */
+.h-foot {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    background-color: #fff;
+}
+.h-foot a {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+.h-foot img {
+    width:0.5rem ;
+}
+.h-foot span {
+    width: 100%;
+}

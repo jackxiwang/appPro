@@ -1,0 +1,116 @@
+.wrap {
+    margin: 0 auto;
+    width: 7.5rem;
+  }
+  .wrap .header {
+    padding: 0 0.28rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0.94rem;
+    background-color: #f26c10;
+    color: #fff;
+  }
+ 
+
+  .wrap .content {
+    margin-top:0.72rem;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .wrap .content .list-nav {
+    padding-top: 0.4rem;
+    width: 1.8rem;
+    height: 100%;
+    color: #6d6d6d;
+    font-size: 0.24rem;
+    text-align: center;
+  }
+  .wrap .content .list-nav li {
+    position: relative;
+    margin-bottom: 0.62rem;
+    width: 100%;
+    height: 0.52rem;
+    line-height: 0.52rem;
+  }
+ 
+  .nav-active {
+    color: #f26c10;
+    
+  }
+  .nav-active:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.07rem;
+    height: 0.52rem;
+    background-color: #f26c10;
+  }
+  .wrap .content .list-shop {
+    flex: 1;
+    padding: 0 0.35rem 0 0.25rem;
+  }
+ 
+  .wrap .content .list-shop .product-list {
+    margin-top: 0.36rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .product-content {
+      position: relative;
+      width: 48%;
+      height: 2.16rem;
+      background-color: #ccc;
+      border-radius: 0.2rem;
+      overflow: hidden;
+  }
+  .wrap .content .list-shop .product-list .product-content img {
+    display: block;
+    width: 100%;
+    height: 1.45rem;
+  }
+  .wrap .content .list-shop .product-list .product-content p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.46rem;
+    line-height: 0.46rem;
+    background-color: #1d84a7;
+    margin-top: 0.24rem;
+    color: #fff;
+    font-size: 0.2rem;
+    text-align: center;
+  }
+  /* /////////////////////////// */
+.h-foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.h-foot div {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.h-foot img {
+  width:0.5rem ;
+}
+.h-foot span {
+  width: 100%;
+}

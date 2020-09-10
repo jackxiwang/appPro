@@ -1,0 +1,72 @@
+.detail-mark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+}
+.detail-car {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+}
+.detail-title {
+    padding: 0.2rem;
+    display: flex;
+    align-items:flex-start;
+    
+}
+.detail-title p {
+    margin-top: 0.16rem;
+    margin-left: 0.16rem;
+    font-size: 0.36rem;
+}
+.title-img {
+    width: 2.08rem;
+    height: 1.92rem;
+    border: 1px solid #ccc;
+    border-radius: 0.16rem;
+}
+.title-img img {
+    width: 100%;
+    height: 100%;
+}
+.de-round {
+    padding: 0.2rem;
+}
+.de-round p{
+    font-size: 0.4rem;
+}
+.round-list {
+    display: flex;
+}
+.round-list li {
+    margin-right: 0.2rem;
+    width: 52px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 0.1rem;
+}
+.round-active {
+    border: 1px solid #ffaa00 !important;
+    color: #ffaa00;
+}
+.de-sub {
+    margin: 0.4rem auto;
+    width: 1.8rem;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    
+}
+.de-sub button {
+    width: 100%;
+    height:100%;
+    background-color:#ffaa00;
+    color: #fff;
+    text-align: center;
+}

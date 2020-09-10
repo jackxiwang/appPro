@@ -1,0 +1,113 @@
+.detail{
+    display: flex;
+    flex-direction: column;
+}
+.detail .head {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ff9900;
+    width: 100%;
+    height: 0.72rem;
+    line-height: 0.72rem;
+}
+.de-login {
+    margin: 0 auto;
+}
+.return {
+    position: absolute;
+    top:0;
+    left: 0.2rem;
+}
+.head a{
+    font-size: 0.32rem;
+    color: #fff;
+}
+
+.de-con {
+    width: 100%;
+}
+.con-img {
+    width: 100%;
+    /* height: auto; */
+    height: 3.5rem;
+}
+.con-img img {
+    width: 100%;
+    height: 100%;
+}
+.con-desc {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+}
+.desc-top {
+    display: flex;
+    width: 100%;
+    height: 0.96rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.desc-top p {
+    font-size: 0.36rem;
+}
+.desc-cart {
+    display: flex;
+    width: 1rem;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+.desc-cart img {
+    width:0.28rem ;
+}
+.desc-middle {
+display: flex;
+width: 100%;
+height: 0.5rem;
+}
+.desc-middle p {
+    line-height: 0.5rem;
+    font-size: 0.32rem;
+    color: red;
+    margin-right: 0.3rem;
+}
+.desc-middle > span{
+    width: 0.68rem;
+    height:0.5rem;
+    line-height:0.5rem;
+    border: 1px solid #ff9900;
+    margin: 0 0.1rem;
+    text-align: center;
+    color: #ff9900;
+}
+.desc-bottom p{
+    color: #ccc;
+}
+.line {
+    width: 100%;
+    height: 0.3rem;
+    background-color: #ccc;
+}
+
+.de-foot {
+    display: flex;
+    flex-direction:row-reverse ;
+    width: 100%;
+    height: 1rem;
+    background-color: #fff;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    border-top: 1px solid #ccc;
+}
+.foot-sub {
+ width: 30%;
+ height: 100%;
+ background-color: #ff9900;
+ line-height: 1rem;
+ color: #fff;
+ text-align: center;
+}

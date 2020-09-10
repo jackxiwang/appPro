@@ -1,0 +1,43 @@
+.login{
+    display: flex;
+    flex-direction: column;
+}
+.login .header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ff9900;
+    width: 100%;
+    height: 0.72rem;
+    line-height: 0.72rem;
+}
+.header a{
+    font-size: 0.32rem;
+    color: #fff;
+}
+.regit {
+    margin-right: 0.2rem;
+    margin-left: 2.5rem;
+}
+.content {
+    padding: 0.5rem;
+}
+.content .name,.content .pass{
+    margin-top: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom:1px solid #ccc;
+}
+.remmber {
+    margin-top: 0.5rem;
+    text-align:right ;
+}
+.login-btn button {
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    background-color: #ff9900;
+    color: #fff;
+    border-radius: 0.16rem;
+    text-align: center;
+    font-size:0.3rem ;
+}

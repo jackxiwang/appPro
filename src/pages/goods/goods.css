@@ -1,0 +1,54 @@
+.goods .header {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ff9900;
+    width: 100%;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    
+}
+.goods-name {
+    margin: 0 auto;
+    color: #fff;
+}
+.return {
+    position: absolute;
+    top:0;
+    left: 0.2rem;
+    color: #fff;
+}
+.goods-list li {
+    padding: 0.2rem;
+    display: flex;
+    font-size: 0.32rem;
+    width: 100%;
+    height: auto;
+}
+.list-img {
+    margin-right: 0.2rem;
+    width: 1.84rem;
+    height:1.88rem ;
+    background-color: #ccc;
+    border-radius: 0.16rem;
+    overflow: hidden;
+}
+.list-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-price {
+    color: #e23838;
+}
+.list-btn {
+    width:1.64rem ;
+    height:0.6rem ;
+    line-height:0.6rem ;
+    text-align: center;
+    color: #fff;
+    background-color: #ff9900;
+    border-radius: 0.16rem;
+    font-size: 0.24rem;
+}
