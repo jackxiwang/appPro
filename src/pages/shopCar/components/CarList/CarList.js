@@ -18,10 +18,10 @@ export default class CarList extends Component {
     changeNum(){
 
     }
-    add(id){
+    add(id,add){
         const {listUpdate} = this.props
         reqCaredit({id,type:2}).then(res=>{})
-        listUpdate()
+        listUpdate(add)
     }
     sub(id,num){
         const {listUpdate} = this.props
@@ -33,7 +33,7 @@ export default class CarList extends Component {
         toggle(index)
     }
     render() {
-        const { carlist } = this.props
+        const { carlist=[] } = this.props
         return (
             <div>
                 {carlist.map((item,index) => {
@@ -59,7 +59,7 @@ export default class CarList extends Component {
                                         <div className="car-add">
                                             <button onClick={()=>this.sub(item.id,item.num)}>—</button>
                                             <input type="text" value={item.num} onChange={()=>this.changeNum()}/>
-                                            <button onClick={()=>this.add(item.id)}>+</button>
+                                            <button onClick={()=>this.add(item.id,1)}>+</button>
                                         </div>
                                         <p>
                                             总价：<span>{item.num*item.price}</span>

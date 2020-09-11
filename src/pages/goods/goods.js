@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import './goods.css'
+import {reqGoods} from '../../utils/request'
 export default class goods extends Component {
+    componentDidMount(){
+        console.log(this.props.match.params.id);
+        let fid = this.props.match.params.pid
+        reqGoods({fid}).then(res=>{
+
+        })
+    }
     render() {
         return (
             <div className="goods">

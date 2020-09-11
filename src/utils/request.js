@@ -87,3 +87,19 @@ export const reqCaredit = (params)=>{
         data:qs.stringify(params)
     })
 }
+// 购物车删除
+export const reqDel =(params)=>{
+    return axios ({
+        url:'/api/cartdelete',
+        method:'post',
+        data:qs.stringify(params)
+    })
+}
+// 分类商品
+export const reqGoods = (parmas)=>{
+    return axios ({
+        url:'/api/getgoods',
+        method:'get',
+        parmas
+    })
+}

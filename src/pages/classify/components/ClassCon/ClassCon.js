@@ -5,27 +5,31 @@ class ClassCon extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            n:0
+            n: 0
         }
     }
     changeChild(i) {
         this.setState({
-            n:i
+            n: i
         })
         const { catetree } = this.props;
     }
-    
-    render() {
-        const {n}=this.state
+    changePid(n) {
         const { catetree } = this.props
-        let child=catetree[n].children
+        let id = catetree[n].id
+        this.props.history.push('/goods/' + id)
+    }
+    render() {
+        const { n } = this.state
+        const { catetree } = this.props
+        let child = catetree[n].children
 
         return (
             <div>
                 <div className="content">
                     <ul className="list-nav" >
                         {catetree.map((item, index) => {
-                            return <li className={index === n? 'nav-active' : ''}
+                            return <li className={index === n ? 'nav-active' : ''}
                                 key={item.id}
                                 onClick={() => this.changeChild(index)}>
                                 {item.catename}
@@ -39,8 +43,10 @@ class ClassCon extends Component {
                     </ul>
                     <div className="list-shop">
                         <div className="product-list">
-                           { child.map(value => {
-                                return (<div className="product-content" key={value.id}>
+                            {child.map(value => {
+                                return (<div
+                                    className="product-content" key={value.id}
+                                    onClick={()=>this.changePid(n)}>
                                     <img src={value.img} alt="" />
                                     <p>{value.catename}</p>
                                 </div>)

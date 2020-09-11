@@ -5,7 +5,9 @@ import person from '../../assets/img/1.jpg'
 import keep from '../../assets/img/keep.png'
 import refound from '../../assets/img/icon_refund.png'
 export default class mine extends Component {
+    
     render() {
+        const name = localStorage.getItem('name')
         return (
             <div className="mine">
                 <div className="mine-head">
@@ -30,7 +32,7 @@ export default class mine extends Component {
                 </div>
 
                 <div className="people-name">
-                    <p >小不点儿</p>
+                    <p >{name}</p>
                     <div className="per-icon">
                         <img src={keep} alt="" />
                         <div>我的收藏 (<span>5</span>)</div>

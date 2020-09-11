@@ -13,7 +13,7 @@ function App() {
         <Route path="/login" component={Login}></Route>
         <Route path="/home" component={Home}></Route>
         <Route path="/detail/:id" component={Detail}></Route>
-        <Route path="/goods" component={Goods}></Route>
+        <Route path="/goods/:pid" component={Goods}></Route>
         <Route path="/redit" component={Redit}></Route>
         <Redirect to="/login" ></Redirect>
       </Switch>

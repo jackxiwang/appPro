@@ -14,7 +14,6 @@ export default class detailCar extends Component {
     inHide(e){
         const {hide} = this.state
         if( e.target.className==='detail-mark'){
-            console.log(this.state.hide);
             hide()
         }
     }

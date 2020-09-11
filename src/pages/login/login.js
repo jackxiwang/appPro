@@ -25,6 +25,7 @@ export default class login extends Component {
         reqLogin(user).then(res=>{
             if(res.data.code == '200') {
                 localStorage.setItem('uid',res.data.list.uid)
+                localStorage.setItem('name',res.data.list.nickname)
                 localStorage.setItem('isLogin',1);
                 this.props.history.push('/home')
             }else {

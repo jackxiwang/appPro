@@ -3,64 +3,94 @@ import './shopCar.css'
 import CarList from './components/CarList/CarList'
 import Edit from './components/Edit/shopEdit'
 import Head from '../../components/head/Head'
-import edit from '../../assets/img/editor_nor.png'
+import editN from '../../assets/img/editor_nor.png'
+import editH from '../../assets/img/editor_hig.png'
+import radioN from '../../assets/img/radio_nor.png'
+import radioH from '../../assets/img/radio_hig.png'
 import { reqCarList } from '../../utils/request'
 export default class shopCar extends Component {
     constructor() {
         super()
         this.state = {
             carlist: [],
-            sum:0
+            isEdit: false,
+            allCheck: false
         }
     }
     componentDidMount() {
-        // let uid = localStorage.getItem('uid')
-        // reqCarList({uid}).then(res=>{
-        //     this.state.carlist = res.data.list
-        //     this.setState({
-        //         ...this.state
-        //     })
-        // })
         this.listUpdate()
     }
-    listUpdate() {
+    // 购物车列表刷新
+    listUpdate(isDel) {
         let uid = localStorage.getItem('uid')
+        let checkedArr=isDel?[]:this.state.carlist.map(item=>item.checked)
+        console.log(checkedArr);
         reqCarList({ uid }).then(res => {
-            this.state.carlist = res.data.list
-            this.state.carlist.checked = false
+            var carlist = res.data.list
+            
+            carlist.forEach((item,index)=>{
+                item.checked=checkedArr[index]
+            })
             this.setState({
-                ...this.state
+                carlist
             })
         })
     }
+    // 选中切换
     toggle(index) {
-        let { carlist } = this.state
+        let { carlist, allCheck } = this.state
         carlist[index].checked = !carlist[index].checked
+        carlist.every(item => { return item.checked }) ? allCheck = true : allCheck = false
         this.setState({
-            ...carlist
+            ...this.state,
+            allCheck
+        })
+    }
+    // 编辑切换组件
+    changeIsEdit() {
+        this.state.isEdit = !this.state.isEdit;
+        this.setState({
+            ...this.state
+        })
+    }
+    // 全选按钮实现
+    allCheck() {
+        this.state.carlist.forEach(item => { item.checked = !this.state.allCheck })
+        this.state.allCheck = !this.state.allCheck
+        this.setState({
+            ...this.state
         })
     }
     render() {
-        const { carlist } = this.state
+        let { carlist, isEdit, allCheck } = this.state
+        let sum = 0
+        carlist === null || carlist.forEach(item => {
+            if (item.checked) {
+                sum += item.num * item.price
+            }
+        })
         return (
             <div className="shop">
                 <Head title="购物车" go></Head>
                 {/* <div className="header">
                     购物车
                 </div> */}
-                {carlist.length > 0 ? <CarList carlist={carlist} toggle={(index) => this.toggle(index)} listUpdate={() => this.listUpdate()}></CarList> : null}
+                {carlist !== null && carlist.length > 0 && !isEdit ? <CarList carlist={carlist} toggle={(index) => this.toggle(index)} listUpdate={() => this.listUpdate()}></CarList> : <Edit carlist={carlist} listUpdate={(e) => this.listUpdate(e)}></Edit>}
                 {/* <Edit></Edit> */}
+
+
                 <div className="bottom-on">
-                    <div className="check-bot">
+                    <div className="check-bot" onClick={() => this.allCheck()}>
                         <div>
-                            <input type="text" />
-                            <span></span>
+                            <span className="allCheck">
+                                {allCheck ? <img src={radioH} alt="" /> : <img src={radioN} alt="" />}
+                            </span>
                         </div>
                         <p>全选</p>
                     </div>
-                    <div className="redit-bot">
-                        <img src={edit} alt="" />
-                        <p>编辑</p>
+                    <div className="redit-bot" onClick={() => this.changeIsEdit()}>
+                        {isEdit ? <img src={editH} alt="" /> : <img src={editN} alt="" />}
+                        <p >编辑</p>
                     </div>
 
                     <div className="adver-item">

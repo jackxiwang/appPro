@@ -95,58 +95,9 @@
     align-items: center;
     color: #fff;
 }
-.car-translate {
-    /* transform: translate(-1rem); */
+.shopedit .car-translate {
+    transform: translate(-1rem);
 }
 
 
 
-.bottom-on {
-    width: 100%;
-    position: fixed;
-    bottom: 1.5rem ;
-    display: flex;
-    justify-content:space-between;
-
-}
-.check-bot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.check-bot div {
-    width: 100%;
-    height: .8rem;
-}
-.check-bot div input {
-    width: 100%;
-    height:100% ;
-}
-.redit-bot {
-    width: 1rem;
-    margin-right: .2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.redit-bot img {
-    margin-top: .25rem;
-    width: .4rem;
-    height: .4rem;
-}
-.adver-item {
-    width: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.jiesuan {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f26c10;
-    color: #fff;
-    text-align: center;
-}
