@@ -22,7 +22,7 @@ export default class shopCar extends Component {
     }
     // 购物车列表刷新
     listUpdate(isDel) {
-        let uid = localStorage.getItem('uid')
+        let uid = JSON.parse(localStorage.getItem('user')).uid
         let checkedArr=isDel?[]:this.state.carlist.map(item=>item.checked)
         console.log(checkedArr);
         reqCarList({ uid }).then(res => {
@@ -71,14 +71,8 @@ export default class shopCar extends Component {
         })
         return (
             <div className="shop">
-                <Head title="购物车" go></Head>
-                {/* <div className="header">
-                    购物车
-                </div> */}
+                <Head title="购物车"></Head>
                 {carlist !== null && carlist.length > 0 && !isEdit ? <CarList carlist={carlist} toggle={(index) => this.toggle(index)} listUpdate={() => this.listUpdate()}></CarList> : <Edit carlist={carlist} listUpdate={(e) => this.listUpdate(e)}></Edit>}
-                {/* <Edit></Edit> */}
-
-
                 <div className="bottom-on">
                     <div className="check-bot" onClick={() => this.allCheck()}>
                         <div>

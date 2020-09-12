@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './detailCar.css'
+import { Toast, Button } from 'antd-mobile';
 import { reqAddCar } from '../../../utils/request'
 export default class detailCar extends Component {
     constructor(props){
@@ -20,11 +21,17 @@ export default class detailCar extends Component {
     addCar(info){
         const {hide} = this.state
         let data ={};
-        data.uid = localStorage.getItem('uid');
+        data.uid = JSON.parse(localStorage.getItem('user')).uid;
         data.num = 1;
         data.goodsid = info.id
         reqAddCar(data).then(res=>{
-            hide()
+            if(res.data.code==200){
+                hide()
+                Toast.info('添加成功', 1);
+            }else{
+                Toast.info('添加失败', 1);
+            }
+            
         })
     }
     changeN(i){
@@ -50,13 +57,11 @@ export default class detailCar extends Component {
                             {JSON.parse(info.specsattr).map((item,index)=>{
                                 return <li onClick={()=>this.changeN(index)} className={index===n?'round-active':''} key={index}>{item}</li>
                             })}
-                            {/* <li className="round-active">15L</li>
-                            <li>30L</li>
-                            <li>45L</li> */}
+                            
                         </ul>
                     </div>
                     <div className="de-sub"> 
-                        <button onClick={()=>this.addCar(info)}>加入购物车</button>
+                        <Button type="primary" onClick={()=>this.addCar(info)}>加入购物车</Button>
                     </div>
                         
                 </div>):null}

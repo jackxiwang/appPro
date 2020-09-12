@@ -1,10 +1,24 @@
 import axios from 'axios'
 import qs from 'qs'
 
+axios.interceptors.request.use(config=>{
+    if(config.url == '/api/login'|| config.url == '/api/register'){
+        return config
+    }
+   config.headers.authorization=JSON.parse(localStorage.getItem('user')).token;
+    return config
+})
+// 响应拦截
 axios.interceptors.response.use(res=>{
-    console.log('============='+res.config.url+'===========');
+    console.log('======='+res.config.url+'=======');
     console.log(res);
-    return res
+    if(res.data.msg == '登录已过期或访问权限受限'){
+        alert('登录已过期或访问权限受限')
+        localStorage.setItem('user','')
+        localStorage.setItem('isLogin','')
+        
+    }
+    return res;
 })
 // 注册
 export const reqRedit = (params)=>{
@@ -96,10 +110,10 @@ export const reqDel =(params)=>{
     })
 }
 // 分类商品
-export const reqGoods = (parmas)=>{
+export const reqGoods = (params)=>{
     return axios ({
         url:'/api/getgoods',
         method:'get',
-        parmas
+        params
     })
 }

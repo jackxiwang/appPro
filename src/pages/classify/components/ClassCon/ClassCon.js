@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 class ClassCon extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
             n: 0
         }
@@ -12,12 +12,10 @@ class ClassCon extends Component {
         this.setState({
             n: i
         })
-        const { catetree } = this.props;
+        // const { catetree } = this.props;
     }
-    changePid(n) {
-        const { catetree } = this.props
-        let id = catetree[n].id
-        this.props.history.push('/goods/' + id)
+    changePid(id,title) {
+        this.props.history.push('/goods/?id=' + id+'&title='+title)
     }
     render() {
         const { n } = this.state
@@ -46,7 +44,7 @@ class ClassCon extends Component {
                             {child.map(value => {
                                 return (<div
                                     className="product-content" key={value.id}
-                                    onClick={()=>this.changePid(n)}>
+                                    onClick={()=>this.changePid(value.id,value.catename)}>
                                     <img src={value.img} alt="" />
                                     <p>{value.catename}</p>
                                 </div>)

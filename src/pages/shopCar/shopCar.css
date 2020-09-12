@@ -100,6 +100,9 @@
     justify-content:space-between;
 
 }
+.shop-list {
+    margin-top: 1rem;
+}
 .check-bot {
     display: flex;
     flex-direction: column;

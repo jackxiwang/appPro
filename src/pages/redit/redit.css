@@ -41,6 +41,9 @@
 .confirm {
     margin-top: 0.5rem;
 }
+#confirm {
+    height: 1rem;
+}
 .redit-btn button {
     margin-top: 0.5rem;
     width: 100%;

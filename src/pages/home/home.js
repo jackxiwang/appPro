@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom'
 import './home.css'
-// import logo from '../../assets/img/img/home/logo.jpg'
-// import seckill from '../../assets/img/img/home/1.jpg'
+import asyncComponent from '../../utils/asyncComponent'
 import indexH from '../../assets/img/tab_home_hig.png'
 import indexN from '../../assets/img/tab_home_nor.png'
 import meN from '../../assets/img/tab_me_nor.png'
@@ -11,10 +10,11 @@ import menuN from '../../assets/img/tab_menu_nor.png'
 import menuH from '../../assets/img/tab_menu_hig.png'
 import shopN from '../../assets/img/tab_shopping_nor.png'
 import shopH from '../../assets/img/tab_shopping_hig.png'
-import Index from '../index/index'
-import Calssify from '../classify/classify'
-import ShopCar from '../shopCar/shopCar'
-import Mine from '../mine/mine'
+import MyRoute from '../MyRoute/MyRoute'
+const Index = asyncComponent(()=>import('../index/index'))
+const Calssify = asyncComponent(()=>import('../classify/classify'))
+const ShopCar = asyncComponent(()=>import('../shopCar/shopCar'))
+const Mine = asyncComponent(()=>import('../mine/mine'))
 export default class home extends Component {
     constructor() {
         super()
@@ -55,10 +55,10 @@ export default class home extends Component {
         return (
             <div className="home">
                 <Switch>
-                    <Route path="/home/index" component={Index}></Route>
-                    <Route path="/home/classify" component={Calssify}></Route>
-                    <Route path="/home/shop" component={ShopCar}></Route>
-                    <Route path="/home/mine" component={Mine}></Route>
+                    <MyRoute path="/home/index" component={Index}></MyRoute>
+                    <MyRoute path="/home/classify" component={Calssify}></MyRoute>
+                    <MyRoute path="/home/shop" component={ShopCar}></MyRoute>
+                    <MyRoute path="/home/mine" component={Mine}></MyRoute>
                     <Redirect to="/home/index"></Redirect>
                 </Switch>
                 {/* <div className="h-head">

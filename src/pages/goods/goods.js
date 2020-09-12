@@ -1,23 +1,57 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+import querystring from 'querystring'
 import './goods.css'
-import {reqGoods} from '../../utils/request'
+import Head from '../../components/head/Head'
+import { reqGoods } from '../../utils/request'
 export default class goods extends Component {
-    componentDidMount(){
-        console.log(this.props.match.params.id);
-        let fid = this.props.match.params.pid
-        reqGoods({fid}).then(res=>{
-
+    constructor() {
+        super()
+        this.state = {
+            list: [],
+            title: ''
+        }
+    }
+    componentDidMount() {
+        let data = querystring.parse(this.props.location.search.slice(1))
+        let fid = data.id
+        reqGoods({ fid }).then(res => {
+            this.setState({
+                list: res.data.list,
+                title: data.title
+            })
         })
     }
     render() {
+        const { list, title } = this.state
         return (
             <div className="goods">
-                <div className="header">
-                    <a href="#" className="goods-name">电视</a>
-                    <a href="#" className="return">返回</a>
-                </div>
+                <Head title={title} go></Head>
                 <ul className="goods-list">
-                    <li>
+                    {list&&list.length > 0 ?
+                        list.map(item => {
+                            return (
+                                
+                                    <li key={item.id}>
+                                        <Link to={"/detail/"+item.id}>
+                                        <div className="list-img">
+                                            <img src={item.img} alt="" />
+                                        </div>
+                                        <div className="list-con">
+                                            <p className="list-title">
+                                                {item.goodsname}
+                                            </p>
+                                            <p className="list-price">&yen;<span>{item.price}</span></p>
+                                            <div className="list-btn">
+                                                立即抢购
+                                            </div>
+                                        </div>
+                                        </Link>
+                                    </li>
+                                )
+                        }) : null
+                    }
+                    {/* <li>
                         <div className="list-img">
                             <img src="" alt=""/>
                         </div>
@@ -30,7 +64,7 @@ export default class goods extends Component {
                                 立即抢购
                             </div>
                         </div>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         )

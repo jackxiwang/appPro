@@ -24,9 +24,10 @@ export default class login extends Component {
         const {user} = this.state
         reqLogin(user).then(res=>{
             if(res.data.code == '200') {
-                localStorage.setItem('uid',res.data.list.uid)
-                localStorage.setItem('name',res.data.list.nickname)
+                // localStorage.setItem('uid',res.data.list.uid)
+                // localStorage.setItem('name',res.data.list.nickname)
                 localStorage.setItem('isLogin',1);
+                localStorage.setItem('user',JSON.stringify(res.data.list))
                 this.props.history.push('/home')
             }else {
                 alert('账号或密码错误')
@@ -42,11 +43,11 @@ export default class login extends Component {
                 </div>
                 <div className="content">
                     <div className="name">
-                        <label htmlFor="name" >账号</label>
+                        <label htmlFor="name" >账号:</label>
                         <input type="text" id="name" onChange={(e)=>this.changeUser(e,'phone')}/>
                     </div>
                     <div className="pass">
-                        <label htmlFor="pass" >密码</label>
+                        <label htmlFor="pass" >密码:</label>
                         <input type="text" id="pass" onChange={(e)=>this.changeUser(e,'password')}/>
                     </div>
                     <div className="remmber">

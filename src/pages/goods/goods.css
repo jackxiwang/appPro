@@ -18,13 +18,16 @@
     left: 0.2rem;
     color: #fff;
 }
-.goods-list li {
+
+.goods-list a {
+    margin: .8rem 0;
     padding: 0.2rem;
     display: flex;
     font-size: 0.32rem;
     width: 100%;
     height: auto;
 }
+
 .list-img {
     margin-right: 0.2rem;
     width: 1.84rem;

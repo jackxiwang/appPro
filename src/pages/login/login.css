@@ -26,6 +26,9 @@
     padding-bottom: 0.4rem;
     border-bottom:1px solid #ccc;
 }
+.content .name input,.content .pass input {
+    height: 1rem;
+}
 .remmber {
     margin-top: 0.5rem;
     text-align:right ;

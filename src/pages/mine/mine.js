@@ -7,7 +7,7 @@ import refound from '../../assets/img/icon_refund.png'
 export default class mine extends Component {
     
     render() {
-        const name = localStorage.getItem('name')
+        const name = JSON.parse(localStorage.getItem('user')).nickname
         return (
             <div className="mine">
                 <div className="mine-head">
