@@ -27,13 +27,13 @@ export default class shopCar extends Component {
         console.log(checkedArr);
         reqCarList({ uid }).then(res => {
             var carlist = res.data.list
-            
+            if(carlist){
             carlist.forEach((item,index)=>{
                 item.checked=checkedArr[index]
             })
             this.setState({
                 carlist
-            })
+            })}
         })
     }
     // 选中切换
@@ -72,7 +72,7 @@ export default class shopCar extends Component {
         return (
             <div className="shop">
                 <Head title="购物车"></Head>
-                {carlist !== null && carlist.length > 0 && !isEdit ? <CarList carlist={carlist} toggle={(index) => this.toggle(index)} listUpdate={() => this.listUpdate()}></CarList> : <Edit carlist={carlist} listUpdate={(e) => this.listUpdate(e)}></Edit>}
+                {carlist !== null && carlist.length > 0 && !isEdit ? <CarList carlist={carlist} toggle={(index) => this.toggle(index)} listUpdate={() => this.listUpdate()}></CarList> : <Edit carlist={carlist} listUpdate={(e) => this.listUpdate(e)} allCheck={()=>this.allCheck()}></Edit>}
                 <div className="bottom-on">
                     <div className="check-bot" onClick={() => this.allCheck()}>
                         <div>

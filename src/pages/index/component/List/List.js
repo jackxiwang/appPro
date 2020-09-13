@@ -5,14 +5,14 @@ class List extends Component {
     constructor() {
         super()
         this.state = {
-            goods: [],
+            // goods: [],
             url: 'http://localhost:3000'
         }
     }
     componentDidMount() {
         this.setState({
             ...this.state,
-            goods:this.props.goodsList
+            // goods:this.props.goodsList
         })
     }
     detail(id){
@@ -21,7 +21,7 @@ class List extends Component {
         })
     }
     render() {
-        let {goods,url} = this.state
+        let {url} = this.state
         return (
             <div>
                 <ul className="list">

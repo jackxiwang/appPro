@@ -11,10 +11,11 @@ export default class shopEdit extends Component {
 
     }
     delGoods(id){
-        let {listUpdate} = this.props
+        let {listUpdate,allCheck} = this.props
         reqDel({id}).then(res=>{
             listUpdate(true)
         })
+        allCheck()
     }
     render() {
         const { carlist } = this.props
@@ -62,33 +63,6 @@ export default class shopEdit extends Component {
                     )
                 }):null}
 
-
-                {/* <div className="bottom-on">
-                    <div className="check-bot">
-                        <div>
-                            <input type="text" />
-                            <span></span>
-                        </div>
-                        <p>全选</p>
-                    </div>
-                    <div className="redit-bot">
-                        <img src={edit} alt=""/>
-                        <p>编辑</p>
-                    </div>
-                    
-                    <div className="adver-item">
-                        <p>
-                            总计：
-                        <span>163.00</span>
-                        </p>
-                        <p>
-                            不含运费
-                        </p>
-                    </div>
-                    <div className="jiesuan">
-                        去结算
-                </div>
-                </div> */}
             </div>
         )
     }

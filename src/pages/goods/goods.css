@@ -36,6 +36,10 @@
     border-radius: 0.16rem;
     overflow: hidden;
 }
+.list-img img {
+    width: 100%;
+    height: 100%;
+}
 .list-con {
     display: flex;
     flex-direction: column;

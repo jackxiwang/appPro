@@ -70,11 +70,13 @@
       background-color: #ccc;
       border-radius: 0.2rem;
       overflow: hidden;
+      margin-bottom: .2rem;
   }
   .wrap .content .list-shop .product-list .product-content img {
     display: block;
     width: 100%;
-    height: 1.45rem;
+    height: 100%;
+    /* height: 1.45rem; */
   }
   .wrap .content .list-shop .product-list .product-content p {
     position: absolute;
@@ -84,7 +86,7 @@
     height: 0.46rem;
     line-height: 0.46rem;
     background-color: #1d84a7;
-    margin-top: 0.24rem;
+    /* margin-top: 0.24rem; */
     color: #fff;
     font-size: 0.2rem;
     text-align: center;
