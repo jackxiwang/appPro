@@ -98,7 +98,7 @@
     bottom: 1rem ;
     display: flex;
     justify-content:space-between;
-
+    background-color: #fff;
 }
 .shop-list {
     margin-top: 1rem;

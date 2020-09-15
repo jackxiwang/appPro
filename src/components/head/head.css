@@ -8,6 +8,7 @@
     width: 100%;
     height: 0.72rem;
     line-height: 0.72rem;
+    z-index: 2000;
 }
 .head-title {
     margin: 0 auto;
