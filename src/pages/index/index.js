@@ -5,6 +5,7 @@ import logo from '../../assets/img/img/home/logo.jpg'
 import seckill from '../../assets/img/img/home/1.jpg'
 import Banner from './component/Banner/Banner'
 import { reqGoodsList,reqBanner } from '../../utils/request'
+//注视验证
 export default class index extends Component {
     constructor(){
         super()
@@ -52,7 +53,7 @@ export default class index extends Component {
                     </div>
                     <div>
                         <img src={seckill} alt=""/>
-                        <a href="#">联系我们</a>
+                        <a href="#">世界互联</a>
                     </div>
                     <div>
                         <img src={seckill} alt=""/>
