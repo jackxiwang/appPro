@@ -53,7 +53,7 @@ export default class index extends Component {
                     </div>
                     <div>
                         <img src={seckill} alt=""/>
-                        <a href="#">世界验证</a>
+                        <a href="#">世界互联</a>
                     </div>
                     <div>
                         <img src={seckill} alt=""/>
